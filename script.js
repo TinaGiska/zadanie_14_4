@@ -73,17 +73,17 @@ var movies = [
 
 ];
 
-var element =
-  React.createElement('div', {},
-    React.createElement('h1', {}, 'Lista filmów'),
-    React.createElement('ul', {}, moviesElements)
-  );
-
 var moviesElements = movies.map(function(movie) {
 return React.createElement(Movie, {key: movie.id},
                     MovieTitle, {}, movie.title,
                     MovieDescription, {}, movie.desc,
                     MovieImage,{src: movie.img});
 });
+
+var element =
+  React.createElement('div', {},
+    React.createElement('h1', {}, 'Lista filmów'),
+    React.createElement('ul', {}, moviesElements)
+  );
 
 ReactDOM.render(element, document.getElementById('app'));
